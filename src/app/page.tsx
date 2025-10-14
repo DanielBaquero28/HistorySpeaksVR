@@ -921,9 +921,9 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                 &copy; 2025 HistorySpeaks VR. All rights reserved.
               </p>
               <div className="flex items-center gap-6 text-sm text-gray-400">
-                <span>Made with ❤️ for educators</span>
-                <span>•</span>
                 <span>Transforming education one classroom at a time</span>
+                <span>•</span>
+                <span>danielalejandrobaquero@gmail.com</span>
               </div>
             </div>
           </div>
