@@ -531,7 +531,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
                   <h4 className="text-xl font-semibold mb-3">Choose Historical Figures</h4>
                   <p className="text-gray-300">Select from available historical personalities displayed on an interactive menu.</p>
-                  <p className="text-gray-300">* Note: At the moment there's only 1 character availiable: Albert Einstein</p>
+                  <p className="text-gray-300">* Note: At the moment there&apos;s only 1 character availiable: Albert Einstein</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
@@ -613,12 +613,12 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   Meet Albert Einstein in VR
                 </h2>
                 <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                  Our initial release features one of history's most brilliant minds. Students can engage 
+                  Our initial release features one of history&apos;s most brilliant minds. Students can engage 
                   in deep, meaningful conversations with Albert Einstein, exploring his groundbreaking theories, 
                   scientific discoveries, and unique perspectives on learning and creativity.
                 </p>
                 <p className="text-lg text-gray-400 mb-8">
-                  Experience Einstein's genius firsthand as he explains complex concepts in simple terms, 
+                  Experience Einstein&apos;s genius firsthand as he explains complex concepts in simple terms, 
                   shares stories from his life, and inspires students to think differently about science and learning.
                 </p>
                 <div className="space-y-4">
@@ -809,7 +809,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
               <DemoContactForm />
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-400">
-                  By submitting, you agree to our privacy policy. We'll contact you within 24 hours.
+                  By submitting, you agree to our privacy policy. We&apos;ll contact you within 24 hours.
                 </p>
               </div>
             </div>

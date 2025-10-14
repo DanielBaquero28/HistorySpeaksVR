@@ -49,7 +49,7 @@ export default function DemoContactForm() {
       return (
         <div className="text-center p-8 bg-green-900/50 rounded-lg text-white">
             <h3 className="text-2xl font-bold mb-2">Demo Request Sent! 🎉</h3>
-            <p className="text-lg">Thank you! We'll contact your school within 24 hours to schedule the session.</p>
+            <p className="text-lg">Thank you! We&apos;ll contact your school within 24 hours to schedule the session.</p>
         </div>
       );
   }
