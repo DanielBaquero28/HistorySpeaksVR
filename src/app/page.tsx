@@ -389,7 +389,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   Transform History Education Forever
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Speak directly with history's greatest figures — making lessons unforgettable and boosting student engagement.
+                  Speak directly with history's greatest figures &mdash; making lessons unforgettable and boosting student engagement.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                   <button 
@@ -473,8 +473,8 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                 {/* Mission statement callout */}
                 <blockquote className="border-l-4 border-cyan-400 pl-5 py-1">
                   <p className="text-gray-200 text-base italic leading-relaxed">
-                    "The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> — 
-                    designed not just to impress, but to foster curiosity, empathy, and lived understanding."
+                    &ldquo;The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> &mdash; 
+                    designed not just to impress, but to foster curiosity, empathy, and lived understanding.&rdquo;
                   </p>
                   <footer className="text-gray-400 text-sm mt-2">— Daniel &amp; Matt, Co-founders</footer>
                 </blockquote>
