@@ -81,27 +81,10 @@ const HomePage: React.FC = () => {
     }));
   };
 
-  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-    
-  //   // Simulate form submission - replace with your actual API call
-  //   try {
-  //     await new Promise(resolve => setTimeout(resolve, 2000));
-  //     alert('Demo request submitted successfully! We\'ll contact you within 24 hours.');
-  //     setFormData({ name: '', email: '', school: '', students: '', message: '' });
-  //   } catch (error) {
-  //     alert('There was an error submitting your request. Please try again.');
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
-
 const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   setIsSubmitting(true);
   
-  // 💡 CALL YOUR INTERNAL API ROUTE 💡
   const API_ROUTE_URL = "/api/submit-form"; 
   
   try {
@@ -127,7 +110,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
     setIsSubmitting(false);
   }
 };
-// ... (rest of the component) ...
 
   const features: FeatureProps[] = [
     {
@@ -232,12 +214,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
     { number: "95%", label: "Teacher satisfaction" }
   ];
 
-  // const [state, handleSubmit] = useForm("mvgwgwpk");
-
-  // if (state.succeeded) {
-  //   alert('Demo request submitted successfully! We\'ll contact you within 24 hours.')
-  // }
-
   return (
     <>
       <Head>
@@ -261,7 +237,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
         <meta name="twitter:image" content="/twitter-image.jpg" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="author" content="Connecting With Legends VR" />
+        <meta name="author" content="History Speaks VR - Daniel Baquero & Matt Crispi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://connectingwithlegends.com" />
         
@@ -283,7 +259,19 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Connecting With Legends VR"
+                "name": "Connecting With Legends VR",
+                "founder": [
+                  {
+                    "@type": "Person",
+                    "name": "Daniel Baquero",
+                    "jobTitle": "CEO & Founder"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Matt Crispi",
+                    "jobTitle": "Director of Research, Marketing, and Pedagogy"
+                  }
+                ]
               }
             })
           }}
@@ -296,10 +284,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center space-x-2">
-                {/* <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">VR</span>
-                </div> */}
-                {/* <img src={Image} alt='Logo' /> */}
                 <div className="main-logo">
                   <Link href="http://localhost:3000"><Image src="/logo.png" alt="History Speaks VR" width={70} height={70} /></Link>
                 </div>
@@ -308,6 +292,12 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
               
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center space-x-8">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="hover:text-cyan-400 transition-colors duration-200"
+                >
+                  About Us
+                </button>
                 <button 
                   onClick={() => scrollToSection('problem')} 
                   className="hover:text-cyan-400 transition-colors duration-200"
@@ -349,7 +339,13 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
           {isMenuOpen && (
             <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/20">
               <div className="px-4 py-4 space-y-4">
-                 <button 
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="block w-full text-left py-2 hover:text-cyan-400 transition-colors"
+                >
+                  About Us
+                </button>
+                <button 
                   onClick={() => scrollToSection('problem')} 
                   className="block w-full text-left py-2 hover:text-cyan-400 transition-colors"
                 >
@@ -393,7 +389,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   Transform History Education Forever
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Speak directly with history’s greatest figures — making lessons unforgettable and boosting student engagement.
+                  Speak directly with history's greatest figures — making lessons unforgettable and boosting student engagement.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                   <button 
@@ -402,25 +398,142 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   >
                     Request Free Demo <ArrowRight size={20} />
                   </button>
-                  {/* <button className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 px-6 py-4">
-                    <Play size={20} />
-                    Watch 2-Min Overview
-                  </button> */}
                 </div>
-                
-                {/* Stats */}
-                {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">{stat.number}</div>
-                      <div className="text-gray-400 text-sm">{stat.label}</div>
-                    </div>
-                  ))}
-                </div> */}
               </div>
             </div>
           </div>
         </section>
+
+        {/* ─────────────────────────────────────────────────────────── */}
+        {/* ABOUT US SECTION                                           */}
+        {/* ─────────────────────────────────────────────────────────── */}
+        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          {/* Subtle background accent */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="max-w-6xl mx-auto relative">
+
+            {/* Section label */}
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-10 bg-cyan-400/60"></span>
+              <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">The Team Behind the Vision</span>
+              <span className="h-px w-10 bg-cyan-400/60"></span>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+              {/* ── LEFT COLUMN: copy ── */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                  Built by Educators &amp; Engineers Who{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Believe Learning Should Feel Alive
+                  </span>
+                </h2>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  History Speaks VR was born at the intersection of <strong className="text-white">deep technical innovation</strong> and{' '}
+                  <strong className="text-white">research-driven pedagogy</strong> — two disciplines that rarely share the same room, let alone the same product.
+                </p>
+
+                <div className="space-y-5 mb-8">
+                  {/* Daniel blurb */}
+                  <div className="flex gap-4 items-start bg-white/5 border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-all duration-300">
+                    <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                      DB
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold mb-1">Daniel Baquero — CEO &amp; Founder</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Full-stack engineer specializing in Unity and AR/VR development. Daniel transforms immersive storytelling, 
+                        AI, and interactive design into meaningful, human-centered learning experiences — ensuring every virtual 
+                        world is technically flawless and deeply engaging.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Matt blurb */}
+                  <div className="flex gap-4 items-start bg-white/5 border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-all duration-300">
+                    <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                      MC
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold mb-1">Matt Crispi — Director of Research, Marketing &amp; Pedagogy</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Educator and learning scientist whose work in cognitive science and games for learning guarantees every 
+                        experience is developmentally sound, pedagogically grounded, and truly classroom-ready.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mission statement callout */}
+                <blockquote className="border-l-4 border-cyan-400 pl-5 py-1">
+                  <p className="text-gray-200 text-base italic leading-relaxed">
+                    "The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> — 
+                    designed not just to impress, but to foster curiosity, empathy, and lived understanding."
+                  </p>
+                  <footer className="text-gray-400 text-sm mt-2">— Daniel &amp; Matt, Co-founders</footer>
+                </blockquote>
+              </div>
+
+              {/* ── RIGHT COLUMN: team cards ── */}
+              <div className="grid grid-cols-2 gap-6">
+
+                {/* Daniel card */}
+                <div className="group flex flex-col items-center text-center">
+                  <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-2xl border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300 shadow-xl">
+                    {/* 
+                      ⚠️  Replace "/daniel-baquero.jpg" with the actual image path in your /public folder.
+                          Recommended size: 400×400 px or square crop.
+                    */}
+                    <Image
+                      src="/daniel-baquero.jpg"
+                      alt="Daniel Baquero, CEO & Founder of History Speaks VR"
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-cyan-400/40 rounded-xl px-4 py-3 w-full transition-all duration-300">
+                    <p className="text-white font-semibold text-sm">Daniel Baquero</p>
+                    <p className="text-cyan-400 text-xs mt-0.5 font-medium">Founder &amp; CEO</p>
+                  </div>
+                </div>
+
+                {/* Matt card */}
+                <div className="group flex flex-col items-center text-center">
+                  <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-2xl border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300 shadow-xl">
+                    {/* 
+                      ⚠️  Replace "/matt-crispi.jpg" with the actual image path in your /public folder.
+                          Recommended size: 400×400 px or square crop.
+                    */}
+                    <Image
+                      src="/matt-crispi.jpg"
+                      alt="Matt Crispi, Director of Marketing, Research & Pedagogy at History Speaks VR"
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-cyan-400/40 rounded-xl px-4 py-3 w-full transition-all duration-300">
+                    <p className="text-white font-semibold text-sm">Matt Crispi</p>
+                    <p className="text-cyan-400 text-xs mt-0.5 font-medium">Director of Marketing</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* ─────────────────────────────────────────────────────────── */}
+        {/* END ABOUT US SECTION                                       */}
+        {/* ─────────────────────────────────────────────────────────── */}
 
         {/* Problem Statement */}
         <section id="problem" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
@@ -454,16 +567,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                 <div className="flex items-center justify-center overflow-hidden rounded-2xl">
                   <Image src='/students_bored_2.jpg' alt='VR History App' width={688} height={384} />
                 </div>
-                {/* <div className="w-full h-80 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center border border-white/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10"></div>
-                  <div className="text-center relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                      <span className="text-3xl">📚</span>
-                    </div>
-                    <p className="text-gray-400 text-lg font-semibold">Traditional Passive Learning</p>
-                    <p className="text-gray-500 text-sm mt-2">Low engagement • Poor retention • Limited interaction</p>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -564,46 +667,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
           </div>
         </section>
 
-        {/* Benefits for Educators */}
-        {/* <section id="benefits" className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-cyan-400">Why Educators Choose VR Learning</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Virtual Reality transforms education by engaging multiple senses and creating memorable experiences 
-                that traditional methods cannot match. See the dramatic improvement in your classroom.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                </div>
-              ))}
-            </div> */}
-
-            {/* Research-backed Results */}
-            {/* <div className="mt-16 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-center mb-8 text-cyan-400">Research-Backed Results</h3>
-              <div className="grid md:grid-cols-2 gap-8 text-center">
-                <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">4x</div>
-                  <p className="text-gray-300">Higher engagement compared to traditional methods</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">75%</div>
-                  <p className="text-gray-300">Improvement in information retention rates</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         {/* Einstein Feature */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-900/50 to-purple-900/50">
           <div className="max-w-6xl mx-auto">
@@ -637,17 +700,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                 </button>
               </div>
               <div className="relative">
-                {/* <div className="w-full h-96 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center border border-white/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10"></div>
-                  <div className="text-center relative z-10">
-                    <div className="w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                      <span className="text-5xl">🧠</span>
-                    </div>
-                    <p className="text-2xl font-semibold text-cyan-400 mb-2">Albert Einstein</p>
-                    <p className="text-gray-400">Interactive AI Conversations</p>
-                    <p className="text-sm text-gray-500 mt-2">Available Now • Coming Soon: More Legends</p>
-                  </div>
-                </div> */}
                 <div className="flex justify-center items-center overflow-hidden">
                   <Image src='/Albert_Einstein_Vertical.jpg' alt='History Speaks VR' width={400} height={533} className="rounded-[1%]"  />
                 </div>
@@ -655,127 +707,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
             </div>
           </div>
         </section>
-
-        {/* Technology Stack */}
-        {/* <section id="technology" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-cyan-400">Built with Enterprise-Grade Technology</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our platform leverages cutting-edge technologies to deliver seamless, scalable, 
-                and secure VR experiences that work across all major VR headsets and educational environments.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {techStack.map((tech, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${tech.color} rounded-xl flex items-center justify-center mb-4`}>
-                    <Shield size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{tech.name}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{tech.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-2xl p-8 border border-white/10">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">Enterprise Security & Compliance</h3>
-                <p className="text-gray-300 text-lg mb-6 max-w-3xl mx-auto">
-                  Our robust technology stack ensures FERPA compliance, data privacy, scalability, 
-                  and seamless integration with existing school systems and learning management platforms.
-                </p>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center gap-2">
-                    <Shield className="text-green-400" size={20} />
-                    <span className="text-gray-300">FERPA Compliant</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Shield className="text-green-400" size={20} />
-                    <span className="text-gray-300">SOC 2 Certified</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Shield className="text-green-400" size={20} />
-                    <span className="text-gray-300">99.9% Uptime SLA</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
-        {/* Testimonials/Social Proof */}
-        {/* <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 text-cyan-400">Trusted by Educators Worldwide</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="flex items-center mb-4">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="text-yellow-400 fill-current" size={20} />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 italic">
-                  "This VR experience has completely transformed how my students engage with history. 
-                  They're asking deeper questions and retaining information like never before."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">SM</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Sarah Mitchell</p>
-                    <p className="text-gray-400 text-sm">History Teacher, Lincoln High School</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="flex items-center mb-4">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="text-yellow-400 fill-current" size={20} />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 italic">
-                  "The Einstein interaction is phenomenal. Students who usually struggle with physics 
-                  concepts are now excited to learn. This is the future of education."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">MJ</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Dr. Michael Johnson</p>
-                    <p className="text-gray-400 text-sm">Science Department Head, Riverside Academy</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="flex items-center mb-4">
-                  {[1,2,3,4,5].map((star) => (
-                    <Star key={star} className="text-yellow-400 fill-current" size={20} />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 italic">
-                  "Implementation was seamless, and the student engagement metrics speak for themselves. 
-                  Test scores improved by 40% in the first semester alone."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">EW</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Emily Watson</p>
-                    <p className="text-gray-400 text-sm">Principal, Oak Valley Middle School</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         {/* Demo Request Section */}
         <section id="demo" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-900/30 to-blue-900/30">
@@ -797,10 +728,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   <CheckCircle className="text-green-400" size={16} />
                   Live Einstein VR demonstration
                 </span>
-                {/* <span className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400" size={16} />
-                  Custom implementation plan
-                </span> */}
               </div>
             </div>
             
@@ -815,47 +742,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
             </div>
           </div>
         </section>
-
-        {/* FAQ Section */}
-        {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 text-cyan-400">Frequently Asked Questions</h2>
-            
-            <div className="space-y-6">
-              {[
-                {
-                  question: "What VR headsets are supported?",
-                  answer: "Our platform supports all major VR headsets including Meta Quest 2/3/Pro, HTC Vive, Valve Index, and Windows Mixed Reality devices. We use OpenXR for maximum compatibility."
-                },
-                {
-                  question: "How do I integrate this into my existing curriculum?",
-                  answer: "Our education team provides comprehensive curriculum integration support, including lesson plans, learning objectives alignment, and teacher training resources to seamlessly fit into your history program."
-                },
-                {
-                  question: "Is the content historically accurate?",
-                  answer: "Absolutely. Our AI responses are based on extensive historical research, peer-reviewed sources, and consultation with history professors to ensure accuracy and educational value."
-                },
-                {
-                  question: "What technical requirements do we need?",
-                  answer: "Minimum requirements include VR headsets, computers with Windows 10+ or equivalent, and reliable internet connection. We provide detailed technical specifications and setup support."
-                },
-                {
-                  question: "How much does it cost for schools?",
-                  answer: "We offer flexible pricing plans for educational institutions based on number of students and usage. Contact us for a customized quote that fits your budget and needs."
-                },
-                {
-                  question: "Will you add more historical figures?",
-                  answer: "Yes! Einstein is just the beginning. We're actively developing interactions with figures like Marie Curie, Leonardo da Vinci, Abraham Lincoln, and many others based on educator feedback."
-                }
-              ].map((faq, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">{faq.question}</h3>
-                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
 
         {/* Footer */}
         <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-black/40 border-t border-white/10">
@@ -872,26 +758,6 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   Revolutionizing history education through immersive VR experiences and AI-powered interactions. 
                   Making learning memorable, engaging, and effective for the next generation of students.
                 </p>
-                {/* <div className="flex space-x-6">
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                    <span className="sr-only">LinkedIn</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                    <span className="sr-only">X</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                    <span className="sr-only">YouTube</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
-                </div> */}
               </div>
               
               <div>
@@ -907,23 +773,20 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
               <div>
                 <h4 className="text-lg font-semibold mb-6 text-cyan-400">Company</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><a href="#" className="hover:text-white transition-colors duration-200">About Us</a></li>
-                  {/* <li><a href="#" className="hover:text-white transition-colors duration-200">Contact</a></li> */}
+                  <li><button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors duration-200">About Us</button></li>
                   <li><a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-                  {/* <li><a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors duration-200">Support</a></li> */}
                 </ul>
               </div>
             </div>
             
             <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; 2025 HistorySpeaks VR. All rights reserved.
+                &copy; 2026 HistorySpeaks VR. All rights reserved.
               </p>
               <div className="flex items-center gap-6 text-sm text-gray-400">
                 <span>Transforming education one classroom at a time</span>
                 <span>•</span>
-                <span>danielalejandrobaquero@gmail.com</span>
+                <span>historyspeaksvr@gmail.com</span>
               </div>
             </div>
           </div>
