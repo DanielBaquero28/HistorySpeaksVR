@@ -389,7 +389,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   Transform History Education Forever
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Speak directly with history's greatest figures &mdash; making lessons unforgettable and boosting student engagement.
+                  Speak directly with history&apos;s greatest figures &mdash; making lessons unforgettable and boosting student engagement.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                   <button 
