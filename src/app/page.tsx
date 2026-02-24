@@ -423,65 +423,50 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
               <span className="h-px w-10 bg-cyan-400/60"></span>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
               {/* ── LEFT COLUMN: copy ── */}
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                  Built by Educators &amp; Engineers Who{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Believe Learning Should Feel Alive
-                  </span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-cyan-400">
+                  About Us
                 </h2>
 
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  History Speaks VR was born at the intersection of <strong className="text-white">deep technical innovation</strong> and{' '}
-                  <strong className="text-white">research-driven pedagogy</strong> — two disciplines that rarely share the same room, let alone the same product.
+                <p className="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
+                  History Speaks VR was born from a simple but radical question: what if students didn&apos;t just read about history &mdash; what if they could live it? Founded by Daniel Baquero and Matt Crispi, the company sits at the crossroads of cutting-edge technology and evidence-based education, building VR experiences that transform passive learners into active participants in history&apos;s greatest moments.
                 </p>
 
-                <div className="space-y-5 mb-8">
-                  {/* Daniel blurb */}
-                  <div className="flex gap-4 items-start bg-white/5 border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-all duration-300">
-                    <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                      DB
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">Daniel Baquero — CEO &amp; Founder</p>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        Full-stack engineer specializing in Unity and AR/VR development. Daniel transforms immersive storytelling, 
-                        AI, and interactive design into meaningful, human-centered learning experiences — ensuring every virtual 
-                        world is technically flawless and deeply engaging.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Matt blurb */}
-                  <div className="flex gap-4 items-start bg-white/5 border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-all duration-300">
-                    <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                      MC
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">Matt Crispi — Director of Research, Marketing &amp; Pedagogy</p>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        Educator and learning scientist whose work in cognitive science and games for learning guarantees every 
-                        experience is developmentally sound, pedagogically grounded, and truly classroom-ready.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Mission statement callout */}
-                <blockquote className="border-l-4 border-cyan-400 pl-5 py-1">
-                  <p className="text-gray-200 text-base italic leading-relaxed">
-                    &ldquo;The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> &mdash; 
-                    designed not just to impress, but to foster curiosity, empathy, and lived understanding.&rdquo;
-                  </p>
-                  <footer className="text-gray-400 text-sm mt-2">— Daniel &amp; Matt, Co-founders</footer>
-                </blockquote>
+                <p className="text-gray-300 text-lg leading-relaxed text-justify">
+                  Daniel brings the engineering depth to make immersive AI-driven worlds feel real, intuitive, and responsive. Matt drives the vision of how History Speaks VR reaches the world &mdash; crafting the story, building the brand, and connecting the product to the educators and institutions who need it most. Together, they&apos;re building something that doesn&apos;t just impress &mdash; it works.
+                </p>
               </div>
 
-              {/* ── RIGHT COLUMN: team cards ── */}
-              <div className="grid grid-cols-2 gap-6">
+              {/* ── RIGHT COLUMN: team cards + mission statement ── */}
+              <div>
+                <div className="grid grid-cols-2 gap-6 mb-6">
+
+                
+
+                {/* Matt card */}
+                <div className="group flex flex-col items-center text-center">
+                  <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-2xl border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300 shadow-xl">
+                    {/* 
+                      ⚠️  Replace "/matt-crispi.jpg" with the actual image path in your /public folder.
+                          Recommended size: 400×400 px or square crop.
+                    */}
+                    <Image
+                      src="/MatthewCrispi.jpg"
+                      alt="Matt Crispi, Director of Marketing, Research & Pedagogy at History Speaks VR"
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-cyan-400/40 rounded-xl px-4 py-3 w-full transition-all duration-300">
+                    <p className="text-white font-semibold text-sm">Matt Crispi</p>
+                    <p className="text-cyan-400 text-xs mt-0.5 font-medium">Director of Marketing, Research & Pedagogy</p>
+                  </div>
+                </div>
 
                 {/* Daniel card */}
                 <div className="group flex flex-col items-center text-center">
@@ -491,7 +476,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                           Recommended size: 400×400 px or square crop.
                     */}
                     <Image
-                      src="/daniel-baquero.jpg"
+                      src="/DanielBaquerov2.png"
                       alt="Daniel Baquero, CEO & Founder of History Speaks VR"
                       fill
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -505,27 +490,15 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   </div>
                 </div>
 
-                {/* Matt card */}
-                <div className="group flex flex-col items-center text-center">
-                  <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-2xl border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300 shadow-xl">
-                    {/* 
-                      ⚠️  Replace "/matt-crispi.jpg" with the actual image path in your /public folder.
-                          Recommended size: 400×400 px or square crop.
-                    */}
-                    <Image
-                      src="/matt-crispi.jpg"
-                      alt="Matt Crispi, Director of Marketing, Research & Pedagogy at History Speaks VR"
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
-                  </div>
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-cyan-400/40 rounded-xl px-4 py-3 w-full transition-all duration-300">
-                    <p className="text-white font-semibold text-sm">Matt Crispi</p>
-                    <p className="text-cyan-400 text-xs mt-0.5 font-medium">Director of Marketing</p>
-                  </div>
                 </div>
+
+                {/* Mission statement callout — full width below photo cards */}
+                {/* <blockquote className="border-l-4 border-cyan-400 pl-5 py-1 mt-6">
+                  <p className="text-gray-200 text-base italic leading-relaxed">
+                    &ldquo;The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> &mdash; designed not just to impress, but to foster curiosity, empathy, and lived understanding.&rdquo;
+                  </p>
+                  <footer className="text-gray-400 text-sm mt-2">&mdash; Daniel &amp; Matt, Co-founders</footer>
+                </blockquote> */}
 
               </div>
             </div>
@@ -707,6 +680,112 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
             </div>
           </div>
         </section>
+
+        {/* ─────────────────────────────────────────────────────────── */}
+        {/* DEMO VIDEO SECTION                                         */}
+        {/* ─────────────────────────────────────────────────────────── */}
+        <section id="watch" className="py-24 px-4 sm:px-6 lg:px-8 bg-black/30 relative overflow-hidden">
+          {/* Background glow accents */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="max-w-6xl mx-auto relative">
+
+            {/* Section header */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-10 bg-cyan-400/60"></span>
+                <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">See It in Action</span>
+                <span className="h-px w-10 bg-cyan-400/60"></span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Watch History Come to Life
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                See a real student session inside History Speaks VR &mdash; from entering the virtual world to having a live conversation with Albert Einstein.
+              </p>
+            </div>
+
+            {/* Video container */}
+            <div className="relative group">
+              {/* Glowing border ring */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 rounded-3xl blur opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+
+              {/* Inner video wrapper */}
+              <div className="relative bg-slate-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                {/*
+                  ⚠️  TO EMBED YOUR VIDEO:
+                  
+                  Option A — YouTube:
+                  Replace the src below with your YouTube embed URL:
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+
+                  Option B — Vimeo:
+                  src="https://player.vimeo.com/video/YOUR_VIDEO_ID"
+
+                  Option C — Self-hosted (MP4 in /public folder):
+                  Remove the <iframe> entirely and use:
+                  <video
+                    src="/your-demo-video.mp4"
+                    controls
+                    poster="/your-thumbnail.jpg"
+                    className="w-full aspect-video"
+                  />
+                */}
+                <div className="aspect-video w-full">
+                  {/* <iframe
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                    title="History Speaks VR — App Demo: Conversation with Albert Einstein"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  /> */}
+                  <video
+                    src="/DemoVideo240226.mov"
+                    controls
+                    poster="/DemoVideoThumbnail.jpg"
+                    className="w-full aspect-video"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Below-video trust cues */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400">
+              <span className="flex items-center gap-2">
+                <CheckCircle className="text-cyan-400" size={16} />
+                Real student session — no actors
+              </span>
+              <span className="hidden sm:block text-white/20">•</span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="text-cyan-400" size={16} />
+                Unscripted AI conversation
+              </span>
+              <span className="hidden sm:block text-white/20">•</span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="text-cyan-400" size={16} />
+                Recorded on Meta Quest headset
+              </span>
+            </div>
+
+            {/* CTA below video */}
+            <div className="mt-10 text-center">
+              <button
+                onClick={() => scrollToSection('demo')}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center gap-2"
+              >
+                Request Your Live Demo <ArrowRight size={20} />
+              </button>
+            </div>
+
+          </div>
+        </section>
+        {/* ─────────────────────────────────────────────────────────── */}
+        {/* END DEMO VIDEO SECTION                                     */}
+        {/* ─────────────────────────────────────────────────────────── */}
 
         {/* Demo Request Section */}
         <section id="demo" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-900/30 to-blue-900/30">
