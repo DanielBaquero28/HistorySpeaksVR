@@ -237,7 +237,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
         <meta name="twitter:image" content="/twitter-image.jpg" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="author" content="History Speaks VR - Daniel Baquero & Matt Crispi" />
+        <meta name="author" content="History Speaks VR - Daniel Baquero & Matthew Crispi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://connectingwithlegends.com" />
         
@@ -268,7 +268,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   },
                   {
                     "@type": "Person",
-                    "name": "Matt Crispi",
+                    "name": "Matthew Crispi",
                     "jobTitle": "Director of Research, Marketing, and Pedagogy"
                   }
                 ]
@@ -436,7 +436,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                 </p>
 
                 <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                  Daniel brings the engineering depth to make immersive AI-driven worlds feel real, intuitive, and responsive. Matt drives the vision of how History Speaks VR reaches the world &mdash; crafting the story, building the brand, and connecting the product to the educators and institutions who need it most. Together, they&apos;re building something that doesn&apos;t just impress &mdash; it works.
+                  Daniel brings the engineering depth to make immersive AI-driven worlds feel real, intuitive, and responsive. Matthew drives the vision of how History Speaks VR reaches the world &mdash; crafting the story, building the brand, and connecting the product to the educators and institutions who need it most. Together, they&apos;re building something that doesn&apos;t just impress &mdash; it works.
                 </p>
               </div>
 
@@ -455,7 +455,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                     */}
                     <Image
                       src="/MatthewCrispi.jpg"
-                      alt="Matt Crispi, Director of Marketing, Research & Pedagogy at History Speaks VR"
+                      alt="Matthew Crispi, Director of Marketing, Research & Pedagogy at History Speaks VR"
                       fill
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
@@ -463,7 +463,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-cyan-400/40 rounded-xl px-4 py-3 w-full transition-all duration-300">
-                    <p className="text-white font-semibold text-sm">Matt Crispi</p>
+                    <p className="text-white font-semibold text-sm">Matthew Crispi</p>
                     <p className="text-cyan-400 text-xs mt-0.5 font-medium">Director of Marketing, Research & Pedagogy</p>
                   </div>
                 </div>
@@ -497,7 +497,7 @@ const handleSubmit1 = async (e: FormEvent<HTMLFormElement>) => {
                   <p className="text-gray-200 text-base italic leading-relaxed">
                     &ldquo;The future of education should be <strong className="text-cyan-400 not-italic">immersive, ethical, and experiential</strong> &mdash; designed not just to impress, but to foster curiosity, empathy, and lived understanding.&rdquo;
                   </p>
-                  <footer className="text-gray-400 text-sm mt-2">&mdash; Daniel &amp; Matt, Co-founders</footer>
+                  <footer className="text-gray-400 text-sm mt-2">&mdash; Daniel &amp; Matthew, Co-founders</footer>
                 </blockquote> */}
 
               </div>
